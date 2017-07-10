@@ -1,0 +1,34 @@
+<ol>
+  <li> Add a button which says Toggle Secret</li>
+  <li>Add a paragraph with any text</li>
+  <li>Toggle displaying of paragraph using button created in step 1</li>
+  <li>Log all button clicks in array and output array below secret paragraph</li>
+  <li>For log items >=5, give log items blue background with ngStyle + ngClass</li>
+</ol>
+
+
+<p>
+<!--     <button class = "btn btn-primary"
+    (click)="showSecret = !showSecret">
+    Toggle Secret</button> -->
+    <button class = "btn btn-primary"
+    (click)="onToggleDetails()">
+    Toggle Secret</button>
+  </p>
+
+  <h4>Secret below:</h4>
+  <p *ngIf = "showSecret" >Secret password = tuna </p>
+  <h4>Log Items</h4>
+  <div *ngFor ="let logItem of log"
+        [ngStyle]= "{backgroundColor: logItem >=5 ? 'blue' : 'transparent'}" 
+        [ngClass]="{'white-text': logItem >= 5}">
+
+        {{ logItem }}
+
+  </div>
+
+
+
+
+
+
